@@ -17,13 +17,6 @@ SCENARIO("BST search non inserted element", "[search]") {
 	REQUIRE( !tree.find(5) );
 }
 
-// 				+----+
-// 				|-08-|									*
-// 				+----+
-//
-//
-// 						 				 08
-// 						 				---->
 SCENARIO("BST delete non inserted element", "[delete]") {
 	BinarySearchTree<int> tree = {8};
 	REQUIRE( !tree.remove(4) );
