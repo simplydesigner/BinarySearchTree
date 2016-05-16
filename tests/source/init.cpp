@@ -23,32 +23,32 @@ SCENARIO("BST delete non inserted element", "[delete]") {
 	REQUIRE( !tree.isEmpty() );
 }
 
-// 				+----+
-// 				|-08-|									*
-// 				+----+
+// 				  +----+
+// 				  |-08-|									           *
+// 				  +----+
 //
 //
-// 						 				 08
-// 						 				---->
+// 						 				    08
+// 						 				   ---->
 SCENARIO("BST delete root without children", "[delete]") {
 	BinarySearchTree<int> tree = {8};
 	REQUIRE( tree.remove(8) );
 	REQUIRE( tree.isEmpty() );
 }
 
-//              +----+                                              +----+
-//              |-08-|                                              | 04 |
-//              +----+                                              +----+
-//                /                                                   /
-//               /                                                   /
-//         +----+                                              +----+
-//         | 04 |                                              | 03 |
-//         +----+                                              +----+
-//           /
-//          /
-//    +----+                              08
-//    | 03 |                             ---->
-//    +----+
+//                +----+                                              +----+
+//                |-08-|                                              | 04 |
+//                +----+                                              +----+
+//                  /                                                   /
+//                 /                                                   /
+//           +----+                                              +----+
+//           | 04 |                                              | 03 |
+//           +----+                                              +----+
+//             /
+//            /
+//      +----+                              08
+//      | 03 |                             ---->
+//      +----+
 SCENARIO("BST delete root with one child", "[delete]") {
 	BinarySearchTree<int> tree = {8, 4, 3};
 	REQUIRE( tree.remove(8) );
